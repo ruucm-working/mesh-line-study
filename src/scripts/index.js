@@ -16,21 +16,12 @@ container.appendChild(renderer.domElement)
 var controls = new THREE.OrbitControls(camera, renderer.domElement)
 
 var colors = [
-  0xed6a5a,
-  0xf4f1bb,
-  0x9bc1bc,
-  0x5ca4a9,
-  0xe6ebe0,
-  0xf0b67f,
-  0xfe5f55,
-  0xd6d1b1,
-  0xc7efcf,
-  0xeef5db,
-  0x50514f,
-  0xf25f5c,
-  0xffe066,
-  0x247ba0,
-  0x70c1b3
+  '#eddcd2',
+  '#fff1e6',
+  '#f0efeb',
+  '#ddbea9',
+  '#a5a58d',
+  '#b7b7a4'
 ]
 
 var resolution = new THREE.Vector2(window.innerWidth, window.innerHeight)
@@ -74,7 +65,9 @@ function init () {
     line[j + 2] = -30 + 0.1 * j
   }
 
-  makeLine(curve, 0)
+  for (let i = 0; i < colors.length; i++) {
+    makeLine(curve, i)
+  }
 }
 
 onWindowResize()
@@ -108,6 +101,8 @@ function render () {
 }
 
 function animate () {
-  const myLine = graph.children[0]
-  myLine.material.uniforms.dashOffset.value += 0.0001
+  for (let i = 0; i < colors.length; i++) {
+    const myLine = graph.children[i]
+    myLine.material.uniforms.dashOffset.value += (0.0005 * Math.random())
+  }
 }
