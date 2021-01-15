@@ -8,8 +8,6 @@ var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHei
 camera.position.set(50, 10, 0)
 var frustumSize = 1000
 
-var mouse = new THREE.Vector2()
-
 var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
 renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.setPixelRatio(window.devicePixelRatio)
@@ -98,15 +96,8 @@ function onWindowResize () {
 
   resolution.set(w, h)
 }
-function onDocumentMouseMove (event) {
-  event.preventDefault()
-
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
-}
 
 window.addEventListener('resize', onWindowResize)
-document.addEventListener('mousemove', onDocumentMouseMove, false)
 
 function render () {
   window.requestAnimationFrame(render)
