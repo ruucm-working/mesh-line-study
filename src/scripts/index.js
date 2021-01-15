@@ -16,12 +16,12 @@ container.appendChild(renderer.domElement)
 var controls = new THREE.OrbitControls(camera, renderer.domElement)
 
 var colors = [
-  '#eddcd2',
-  '#fff1e6',
-  '#f0efeb',
-  '#ddbea9',
-  '#a5a58d',
-  '#b7b7a4'
+  '#eddcd2'
+  // '#fff1e6',
+  // '#f0efeb',
+  // '#ddbea9',
+  // '#a5a58d',
+  // '#b7b7a4'
 ]
 
 var resolution = new THREE.Vector2(window.innerWidth, window.innerHeight)
@@ -68,6 +68,7 @@ function init () {
   for (let i = 0; i < colors.length; i++) {
     makeLine(curve, i)
   }
+  console.log('graph.children', graph.children)
 }
 
 onWindowResize()
