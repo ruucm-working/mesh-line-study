@@ -71,19 +71,19 @@ function makeSolidLine (geo, c) {
 }
 
 function makeCoordinates () {
-  var line = new THREE.Geometry()
+  const line = new THREE.Geometry()
   line.vertices.push(new THREE.Vector3(-30, -30, -30))
   line.vertices.push(new THREE.Vector3(30, -30, -30))
   makeSolidLine(line, 0)
 
-  var line = new THREE.Geometry()
-  line.vertices.push(new THREE.Vector3(-30, -30, -30))
-  line.vertices.push(new THREE.Vector3(-30, 30, -30))
+  const line2 = new THREE.Geometry()
+  line2.vertices.push(new THREE.Vector3(-30, -30, -30))
+  line2.vertices.push(new THREE.Vector3(-30, 30, -30))
   makeSolidLine(line, 0)
 
-  var line = new THREE.Geometry()
-  line.vertices.push(new THREE.Vector3(-30, -30, -30))
-  line.vertices.push(new THREE.Vector3(-30, -30, 30))
+  const line3 = new THREE.Geometry()
+  line3.vertices.push(new THREE.Vector3(-30, -30, -30))
+  line3.vertices.push(new THREE.Vector3(-30, -30, 30))
   makeSolidLine(line, 0)
 }
 
