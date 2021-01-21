@@ -14,7 +14,7 @@ class CustomEngine extends Engine {}
 
 const engine = new CustomEngine()
 
-const text = new AnimatedText3D('Shooting Stars', { color: '#dc2c5a', size: 0.8 })
+const text = new AnimatedText3D('ruucm is watching TV.', { color: '#005dfa', size: 0.8 })
 text.position.x -= text.basePosition * 0.5
 // text.position.y -= 0.5;
 engine.add(text)
